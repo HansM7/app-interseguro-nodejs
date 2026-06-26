@@ -30,7 +30,7 @@ async function bootstrap() {
 
 
   app.enableCors({
-    origin: 'https://app-interseguro-frontend.vercel.app/',
+    origin: 'https://app-interseguro-frontend.vercel.app',
     credentials: true,
   });
 
