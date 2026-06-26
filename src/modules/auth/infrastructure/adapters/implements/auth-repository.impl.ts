@@ -38,4 +38,16 @@ export class AuthRepositoryImpl implements AuthRepositoryPort {
   async deleteSession(refreshToken: string): Promise<void> {
     await this.prisma.session.delete({ where: { refreshToken } });
   }
+
+  async seedUser(user: Partial<IUser>): Promise<IUser> {
+    return this.prisma.user.upsert({
+      where: { username: user.username },
+      update: {},
+      create: {
+        username: user.username as string,
+        password: user.password as string,
+        logged: user.logged as boolean,
+      },
+    }) as Promise<IUser>;
+  }
 }

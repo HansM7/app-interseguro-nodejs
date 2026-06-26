@@ -6,4 +6,5 @@ export abstract class AuthRepositoryPort {
   abstract createSession(userId: number, refreshToken: string, expiresAt: Date): Promise<void>;
   abstract findSessionByToken(refreshToken: string): Promise<any | null>;
   abstract deleteSession(refreshToken: string): Promise<void>;
+  abstract seedUser(user: Partial<IUser>): Promise<IUser>;
 }

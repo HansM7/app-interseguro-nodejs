@@ -44,4 +44,11 @@ export class AuthController {
     }
     return this.authUseCase.refresh(body.refreshToken);
   }
+
+  @Post('seed')
+  @ApiOperation({ summary: 'Seed test user' })
+  @ApiResponse({ status: 201, description: 'Seed executed successfully.' })
+  async seed() {
+    return this.authUseCase.seed();
+  }
 }

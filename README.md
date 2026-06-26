@@ -86,10 +86,11 @@ Cuando el servidor esté corriendo, visita:
 👉 **[http://localhost:4000/docs](http://localhost:4000/docs)**
 
 ### Flujo de Prueba
-1. Ve al endpoint `POST /auth/login` e ingresa el payload con `testuser` y `password123`.
-2. Copia el `accessToken` devuelto.
-3. Arriba a la derecha, haz clic en **Authorize** y pega el token.
-4. Ahora podrás ejecutar el endpoint `POST /api/matrices/stats` enviando el payload QR.
+1. Opcionalmente, ejecuta el endpoint `POST /auth/seed` para crear el usuario de prueba inicial (`testuser` / `password123`) si no has ejecutado el seeder de Prisma.
+2. Ve al endpoint `POST /auth/login` e ingresa el payload con `testuser` y `password123`.
+3. Copia el `accessToken` devuelto.
+4. Arriba a la derecha, haz clic en **Authorize** y pega el token.
+5. Ahora podrás ejecutar el endpoint `POST /api/matrices/stats` enviando el payload QR.
 
 ---
 

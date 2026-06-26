@@ -53,4 +53,14 @@ export class AuthUseCase {
     const accessToken = this.jwtService.sign({ id: session.user.id, username: session.user.username }, { expiresIn: '1h' });
     return { accessToken };
   }
+
+  async seed(): Promise<any> {
+    const password = await bcrypt.hash('password123', 10);
+    const user = await this.authRepository.seedUser({
+      username: 'testuser',
+      password,
+      logged: false,
+    });
+    return { message: 'Seed executed successfully', user };
+  }
 }
