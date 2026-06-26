@@ -30,7 +30,7 @@ async function bootstrap() {
 
 
   app.enableCors({
-    origin: 'http://localhost:3000',
+    origin: 'https://app-interseguro-frontend.vercel.app/',
     credentials: true,
   });
 
